@@ -180,7 +180,7 @@
             getActiveColor: function (workshop) {
                 if( workshop.is_full){
                     return 'red'
-                }else return '#16375a';
+                }else return '#004958';
             }
 
         },
@@ -246,7 +246,7 @@
 
 
     h1 {
-        color: #787c7f;
+        color: #e4e3e3;
         padding: 20px;
     }
 
@@ -294,7 +294,7 @@
     }
 
     .button {
-        background-color: #16375a;
+        background-color: #004958;
         border: none;
         color: white;
         padding: 10px;
@@ -366,7 +366,7 @@
     th, td {
         border-bottom: 1px solid #ddd;
         padding: 15px;
-        color: #16375a;
+        color: #004958;
     }
     th{
         font-weight: bolder;
@@ -395,7 +395,7 @@
 
     .regBtn:hover {
         color: white;
-        background-color: #16375a;
+        background-color: #004958;
         -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);

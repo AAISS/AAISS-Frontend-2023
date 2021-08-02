@@ -62,7 +62,7 @@
     }
 
     .speakerInfo h5 {
-        color: #328ebf;
+        color: #1b7979;
         font-size: 1em;
         margin-bottom: 20px;
     }

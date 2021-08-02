@@ -224,7 +224,7 @@
 
 
     h1 {
-        color: #787c7f;
+        color: e4e3e3;
         padding: 20px;
     }
 
@@ -337,7 +337,7 @@
     }
 
     .register-button {
-        background-color: #16375a;
+        background-color: #004958;
         border: none;
         color: white;
         padding: 10px;

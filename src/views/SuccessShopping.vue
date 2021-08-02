@@ -61,7 +61,7 @@
     }
 
     .blue {
-        color: #16375a;
+        color: #004958;
     }
 
     .title {
@@ -71,7 +71,7 @@
 
     .text {
         font-size: 20px;
-        color: #16375a;
+        color: #004958;
     }
 
     .list {

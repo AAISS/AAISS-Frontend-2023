@@ -14,9 +14,10 @@
                         </h4>
                     </div>
                 </div>
+                <img src="../assets/img/logo2021.png" class="img-fluid brainImage noSelect"/>
+                <Robot />
+                <img src="../assets/img/aaiss.png" class="aaissHeader" />
             </div>
-            <img src="../assets/img/bigLogoLanding.png" alt="logo image" class="img-fluid brainImage noSelect"
-                 draggable="false">
         </section>
 
 
@@ -213,6 +214,7 @@
     // @ is an alias to /src
     import SpeakerBlock from '../components/SpeakerBlock';
     import TeacherBlock from "../components/TeacherBlock";
+    import Robot from "../components/Robot.vue"
     import axios from "axios";
 
 
@@ -287,6 +289,7 @@
         components: {
             TeacherBlock,
             SpeakerBlock,
+            Robot
         },
         methods: {
             showRegisterSoonMessage: function () {
@@ -341,7 +344,7 @@
     #headerSection {
         min-height: 100vh;
         width: 100%;
-        background: #16375a;
+        background: #004958;
         background: -moz-radial-gradient(center, ellipse cover, #102e48 0%, #535053 100%);
         background: -webkit-radial-gradient(center, ellipse cover, #3f494c 0%, #1D4176 100%);
         background: radial-gradient(ellipse at center, #484c5a 0%, #16375 100%);
@@ -362,7 +365,7 @@
     }
 
     .subTitleCol h4 {
-        color: #55585d;
+        color: white;
     }
 
     .titleCol h1 {
@@ -383,9 +386,9 @@
     }
 
     .brainImage {
-        width: 700px;
+        width: 90%;
         position: absolute;
-        left: 50%;
+        left: 46%;
         top: 50%;
         transform: translate(-50%, -50%);
 
@@ -400,7 +403,7 @@
 
     #aboutSection {
         width: 100%;
-        background-color: #ceccc0;
+        background-color: #128D8A;
         color: white;
         min-height: 100%;
     }
@@ -415,7 +418,7 @@
     }
 
     #speakersSection {
-        background-color: #ceccc0;
+        background-color: #128D8A;
         min-height: 100vh;
         padding-bottom: 30px;
     }
@@ -426,7 +429,7 @@
 
 
     #teacherSection {
-        background-color: #ceccc0;
+        background-color: #128D8A;
         padding-bottom: 30px;
     }
 
@@ -436,11 +439,11 @@
     }
 
     #scheduleSection {
-        background-color: #ceccc0;
+        background-color: #128D8A;
     }
 
     #buttonSection {
-        background-color: #ceccc0;
+        background-color: #128D8A;
         min-height: 30vh;
     }
 
@@ -450,7 +453,7 @@
     }
 
     #organizerSection {
-        background-color: #16375a;
+        background-color: #004958;
     }
 
     .organizerEmail {
@@ -478,7 +481,7 @@
 
     .regBtn:hover {
         color: white;
-        background-color: #16375a;
+        background-color: #004958;
         -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -499,7 +502,7 @@
     }
 
     .text-color-blue {
-        color: #787c7f;
+        color: #e4e3e3;
     }
 
     .aboutText {
@@ -550,6 +553,12 @@
     .firstSpecRow{
     }
 
+    .aaissHeader{
+        position: absolute;
+        top:30%;
+        width:90%;
+    }
+
     @media only screen and (min-width: 416px) and (max-width: 767.98px) {
 
         .small {
@@ -598,5 +607,7 @@
         .small {
             font-size: 17px;
         }
+        
     }
+    
 </style>

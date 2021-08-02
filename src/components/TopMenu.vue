@@ -34,12 +34,15 @@
                 <li class="nav-item">
                     <router-link to="/workshops+presentation" class="nav-link">All Workshops and Presentations</router-link>
                 </li>
+                <!-- <li class="nav-item"> -->
+                   <!-- <router-link to="/staff" class="nav-link">Staff</router-link> -->
+               <!-- </li> -->
                 <li class="nav-item">
                     <a href="http://aaiss.ceit.aut.ac.ir/2019" class="nav-link">AAISS 2019</a>
                 </li>
-<!--                <li class="nav-item">-->
-<!--                    <router-link to="/staff" class="nav-link">Staff</router-link>-->
-<!--                </li>-->
+                <!-- <li class="nav-item"> -->
+                    <!-- <a href="http://aaiss.ceit.aut.ac.ir/2020" class="nav-link">AAISS 2020</a> -->
+                <!-- </li> -->
             </ul>
         </div>
     </nav>
@@ -98,12 +101,12 @@
     }
 
     .nav-item:hover > .nav-link {
-        color: #8e5751 !important;
+        color: #16effb !important;
     }
 
     .nav-link {
         cursor:pointer;
-        color: #bc8f89 !important;
+        color: #128d94 !important;
     }
 
     .navbar-brand {

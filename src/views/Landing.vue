@@ -26,7 +26,7 @@
 
 <style scoped>
     .main-frame {
-        background-color: #16375a;
+        background-color: #004958;
         height: 100%;
         font-weight: bold;
         display: flex;

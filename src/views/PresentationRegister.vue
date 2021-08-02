@@ -315,11 +315,11 @@
 
     p {
         margin: 0;
-        color: #16375a;
+        color: #004958;
     }
 
     .button {
-        background-color: #16375a;
+        background-color: #004958;
         border: none;
         color: white;
         padding: 10px;
@@ -394,7 +394,7 @@
     th, td {
         border-bottom: 1px solid #ddd;
         padding: 15px;
-        color: #16375a;
+        color: #004958;
     }
 
     th {

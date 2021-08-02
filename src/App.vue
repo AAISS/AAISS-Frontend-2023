@@ -1,27 +1,9 @@
 <template>
     <div class="h-100">
+        <particles-bg type="lines" :bg="true" class="particles" num="100"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
               rel="stylesheet">
         <notifications group="auth" position="top center" classes="my-vue-notification"></notifications>
-        <vue-particles
-                color="#b2b4ae"
-                :particleOpacity="1"
-                :particlesNumber="100"
-                shapeType="circle"
-                :particleSize="3"
-                linesColor="#b2b4ae"
-                :linesWidth="1"
-                :lineLinked="true"
-                :lineOpacity="1"
-                :linesDistance="150"
-                :moveSpeed="3"
-                :hoverEffect="true"
-                hoverMode="grab"
-                :clickEffect="true"
-                clickMode="push"
-                class="particles"
-        >
-        </vue-particles><!-- stats - count particles -->
         <TopMenu></TopMenu>
         <transition name="fade" mode="out-in">
             <router-view class="iransans "/>
@@ -33,7 +15,7 @@
 <script>
 
     import TopMenu from "./components/TopMenu";
-    import moment from 'moment-timezone'
+    import moment from 'moment-timezone';
     moment.tz.setDefault('Asia/Amman')
 
     export default {
@@ -87,11 +69,8 @@
     }
 
     .particles {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
+        z-index: 0 !important;  
+        position: fixed !important;   
     }
     .notification-title {
         font-family : system-ui !important;
@@ -115,7 +94,7 @@
         border-left: 5px solid #187FE7;
 
         &.success {
-            background: #16375a;
+            background: #004958;
             border-left-color: #122c48;
         }
         &.warn {

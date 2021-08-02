@@ -221,7 +221,7 @@
     }
 
     h1 {
-        color: #787c7f;
+        color: V;
         padding: 20px;
     }
 
@@ -269,12 +269,12 @@
 
     p {
         margin: 0;
-        color: #16375a;
+        color: #004958;
         padding: 2px;
     }
 
     .button {
-        background-color: #16375a;
+        background-color: #004958;
         border: none;
         color: white;
         padding: 10px;

@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VueParticles from 'vue-particles'
 import router from './router'
 import store from './store'
 import Notifications from 'vue-notification'
@@ -8,11 +7,12 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 var VueScrollTo = require('vue-scrollto');
 import moment from 'moment'
-Vue.use(VueScrollTo);
+import VueParticlesBg from "particles-bg-vue";
 
+Vue.use(VueParticlesBg);
+Vue.use(VueScrollTo);
 Vue.prototype.moment = moment
 Vue.config.productionTip = false;
-Vue.use(VueParticles);
 Vue.use(Notifications)
 
 new Vue({

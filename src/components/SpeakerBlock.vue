@@ -29,7 +29,7 @@
         transition: all 0.1s ease-in-out;
         border-radius: 10px;
         background-color: #ffffff;
-        height: 325px;
+        height: 350px;
         margin-top: 15px;
         padding: 10px;
         -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -55,7 +55,7 @@
     }
 
     .speakerInfo h5 {
-        color: #328ebf;
+        color: #1b7979;
         font-size: 1em;
         margin-bottom: 20px;
     }
