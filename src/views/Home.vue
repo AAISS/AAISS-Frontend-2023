@@ -304,7 +304,7 @@
             getAbout: function () {
                 return new Promise((resolve, reject) => {
                     axios({
-                        url: this.$store.getters.getApi + '/misc/about/',
+                        url: this.$store.getters.getApi + '/misc/about2021/',
                         headers: {
                             'Content-Type': 'application/json',
                         },
