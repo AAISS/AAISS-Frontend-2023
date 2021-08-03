@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        api: 'http://aaiss.ceit.aut.ac.ir/api',
+        api: 'http://aaiss.ceit.aut.ac.ir/api/2021',
         mediaRoot:'http://aaiss.ceit.aut.ac.ir',
         // api: 'http://localhost:8000/api',
         // media: 'http://localhost:8000',
@@ -17,6 +17,7 @@ export default new Vuex.Store({
         teachers: [],
         presentations: [],
         workshops: [],
+        staffList: [],
         email: localStorage.getItem('email') || "",
         FOI: [],
         currentPresenter: {},
@@ -28,6 +29,9 @@ export default new Vuex.Store({
     mutations: {
         updatePresenters(state, newPresenter) {
             state.presenters = newPresenter;
+        },
+        updateStaffList(state, newStaffLIst) {
+            state.staffList = newStaffLIst;
         },
         updateTeachers(state, newTeacher) {
             state.teachers = newTeacher;
@@ -102,7 +106,7 @@ export default new Vuex.Store({
             window.console.log('getting speaker with id:', id);
             return new Promise((resolve, reject) => {
                 axios({
-                    url: this.getters.getApi + '/presenter/' + id,
+                    url: this.getters.getApi + '/presenter/' + id + '/',
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -138,7 +142,7 @@ export default new Vuex.Store({
             window.console.log('getting speaker with id:', id);
             return new Promise((resolve, reject) => {
                 axios({
-                    url: this.getters.getApi + '/teacher/' + id,
+                    url: this.getters.getApi + '/teacher/' + id + '/',
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -186,7 +190,7 @@ export default new Vuex.Store({
         getWorkshopById: function ({commit}, id) {
             return new Promise((resolve, reject) => {
                 axios({
-                    url: this.getters.getApi + '/workshop/' + id,
+                    url: this.getters.getApi + '/workshop/' + id+ '/',
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -215,10 +219,27 @@ export default new Vuex.Store({
                 })
             })
         },
+        getStaff: function ({commit}) {
+            return new Promise((resolve, reject) => {
+                axios({
+                    url: this.getters.getApi + '/staff/',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    method: 'GET',
+                }).then((response) => {
+                    commit('updateStaffList', response.data);
+                    resolve(response.data);
+                    console.log(response.data);
+                }).catch((error) => {
+                    reject(error);
+                })
+            })
+        },
         getPresentationById: function ({commit}, id) {
             return new Promise((resolve, reject) => {
                 axios({
-                    url: this.getters.getApi + '/presentation/' + id,
+                    url: this.getters.getApi + '/presentation/' + id+ '/',
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -281,6 +302,9 @@ export default new Vuex.Store({
         getCurrentWorkshop:
             state => {
                 return state.currentWorkshop
+            },
+            getStaffList: state => {
+                return state.staffList;
             },
         getEmail:
             state => {

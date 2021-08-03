@@ -32,11 +32,11 @@ const router = new Router({
             component: () =>
                 import(/* webpackChunkName: "teacher" */"./views/Teacher")
         },
-        // {
-        //     path: '/staff',
-        //     name: 'Staff',
-        //     component: Staff
-        // },
+        {
+            path: '/staff',
+            name: 'Staff',
+            component: () => import("./views/Staff")
+        },
         {
             path: '/register/user',
             name: 'register_user',

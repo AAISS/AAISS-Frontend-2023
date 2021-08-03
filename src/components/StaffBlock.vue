@@ -1,11 +1,11 @@
 <template>
     <div class="speakerBlock">
         <div class="text-center imgWrapper">
-            <img :src="staffMember.image_path" alt="img" class="rounded-circle img-fluid" draggable="false">
+            <img :src="this.$store.getters.getMediaRoot+staffMember.profile" alt="img" class="rounded-circle img-fluid" draggable="false">
         </div>
         <div class="text-center speakerInfo">
             <h6>
-                {{staffMember.name}}
+                {{staffMember.first_name + " " + staffMember.last_name}}
             </h6>
         </div>
     </div>
@@ -32,13 +32,12 @@
     }
 
     .imgWrapper img {
-        width: 110px;
-        height: 110px;
+        width: 135px;
+        height: 135px;
     }
 
     .speakerBlock .imgWrapper {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 60px;
     }
 
     .speakerInfo h5 {

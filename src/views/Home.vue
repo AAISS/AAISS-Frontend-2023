@@ -557,6 +557,7 @@
         position: absolute;
         top:30%;
         width:90%;
+        left: 3%;
     }
 
     @media only screen and (min-width: 416px) and (max-width: 767.98px) {
@@ -607,6 +608,7 @@
         .small {
             font-size: 17px;
         }
+        
         
     }
     
