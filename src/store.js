@@ -6,8 +6,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        api: 'http://aaiss.ceit.aut.ac.ir/api/2021',
-        mediaRoot:'http://aaiss.ceit.aut.ac.ir',
+        api: 'https://aaiss.ce.aut.ac.ir/api/2021',
+        mediaRoot:'https://aaiss.ce.aut.ac.ir',
         // api: 'http://localhost:8000/api',
         // media: 'http://localhost:8000',
 

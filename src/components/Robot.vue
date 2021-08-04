@@ -114,23 +114,23 @@
   }
 }
 
-  @media only screen and (min-width: 416px) and (max-width: 767.98px) {
+  @media only screen and (min-width: 0) and (max-width: 767.98px) {
 
         .body{
-          top:30%;
+          left: 47%;
+    top: 40%;
+    width: 3%;
         }
         .rightHand{
-          top:44%;
+          top:53%;
+        }
+        .leftHand{
+          width: 5%;
+    left: 49%;
+    top: 53%;
         }
     }
 
-    @media only screen and (min-width: 0) and (max-width: 415px) {
-        .body{
-          top:30%;
-        }
-        .rightHand{
-          top:44%;
-        }
-    }
+    
 
 </style>

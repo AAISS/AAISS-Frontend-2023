@@ -14,22 +14,22 @@
                     <a class="nav-link" @click.prevent="handleHomeButton()">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="http://aaiss.ceit.aut.ac.ir/#aboutSection" class="nav-link">About</a>
+                    <a href="https://aaiss.ce.aut.ac.ir/#aboutSection" class="nav-link">About</a>
                 </li>
 <!--                <li class="nav-item">-->
-<!--                    <a href="http://aaiss.ceit.aut.ac.ir/#committeeSection" class="nav-link">Committee</a>-->
+<!--                    <a href="https://aaiss.ce.aut.ac.ir/#committeeSection" class="nav-link">Committee</a>-->
 <!--                </li>-->
                 <li class="nav-item">
-                    <a href="http://aaiss.ceit.aut.ac.ir/#speakersSection" class="nav-link">Speakers</a>
+                    <a href="https://aaiss.ce.aut.ac.ir/#speakersSection" class="nav-link">Speakers</a>
                 </li>
                 <li class="nav-item">
-                    <a href="http://aaiss.ceit.aut.ac.ir/#teacherSection" class="nav-link">Workshops</a>
+                    <a href="https://aaiss.ce.aut.ac.ir/#teacherSection" class="nav-link">Workshops</a>
                 </li>
                 <li class="nav-item">
-                    <a href="http://aaiss.ceit.aut.ac.ir/#scheduleSection" class="nav-link">Schedule</a>
+                    <a href="https://aaiss.ce.aut.ac.ir/#scheduleSection" class="nav-link">Schedule</a>
                 </li>
                 <li class="nav-item">
-                    <a href="http://aaiss.ceit.aut.ac.ir/#organizerSection" class="nav-link">Organizer</a>
+                    <a href="https://aaiss.ce.aut.ac.ir/#organizerSection" class="nav-link">Organizer</a>
                 </li>
                 <li class="nav-item">
                     <router-link to="/workshops+presentation" class="nav-link">All Workshops and Presentations</router-link>
@@ -38,10 +38,10 @@
                    <router-link to="/staff" class="nav-link">Staff</router-link>
                </li>
                 <li class="nav-item">
-                    <a href="http://aaiss.ceit.aut.ac.ir/2019" class="nav-link">AAISS 2019</a>
+                    <a href="https://aaiss.ce.aut.ac.ir/2019" class="nav-link">AAISS 2019</a>
                 </li>
                 <li class="nav-item">
-                    <a href="http://aaiss.ceit.aut.ac.ir/2020" class="nav-link">AAISS 2020</a>
+                    <a href="https://aaiss.ce.aut.ac.ir/2020" class="nav-link">AAISS 2020</a>
                 </li>
             </ul>
         </div>

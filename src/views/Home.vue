@@ -581,6 +581,18 @@
             font-size: 2.7rem;
             line-height: 45px;
         }
+        .brainImage{
+            width: 108%;
+            position: absolute;
+            left: 46%;
+            top: 60%;
+        }
+        .aaissHeader{
+            top: 45%;
+            width: 90%;
+            left: 4%;
+        }
+        
     }
 
     @media only screen and (min-width: 0) and (max-width: 415px) {
@@ -608,8 +620,17 @@
         .small {
             font-size: 17px;
         }
-        
-        
+        .brainImage{
+            width: 108%;
+            position: absolute;
+            left: 46%;
+            top: 60%;
+        }
+        .aaissHeader{
+            top: 45%;
+            width: 90%;
+            left: 4%;
+        }
     }
     
 </style>
