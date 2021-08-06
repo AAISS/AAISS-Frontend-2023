@@ -69,6 +69,7 @@
 
     export default {
         name: "UserRegister",
+        
         data: function () {
             return {
                 user: {
@@ -168,7 +169,7 @@
             registerUser: function () {
                 return new Promise((resolve, reject) => {
                     axios({
-                        url: this.$store.getters.getApi + '/user/',
+                        url: "https://aaiss.ce.aut.ac.ir/api" + '/user/',
                         headers: {
                             'Content-Type': 'application/json',
                         },
@@ -221,7 +222,7 @@
     }
 
     h1 {
-        color: V;
+        color: white;
         padding: 20px;
     }
 

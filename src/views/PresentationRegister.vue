@@ -186,7 +186,7 @@
             makePayment: function () {
                 return new Promise((resolve, reject) => {
                     axios({
-                        url: this.$store.getters.getApi + '/payment/',
+                        url: "https://aaiss.ce.aut.ac.ir/api" + '/payment/',
                         headers: {
                             'Content-Type': 'application/json',
                         },
@@ -270,7 +270,7 @@
 
 
     h1 {
-        color: #787c7f;
+        color: white;
         padding: 20px;
     }
 

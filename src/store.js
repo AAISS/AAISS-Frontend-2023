@@ -158,7 +158,7 @@ export default new Vuex.Store({
         getFieldsOfInterest: function ({commit}, id) {
             return new Promise((resolve, reject) => {
                 axios({
-                    url: this.getters.getApi + '/foi/',
+                    url: "https://aaiss.ce.aut.ac.ir/api" + '/foi/',
                     headers: {
                         'Content-Type': 'application/json',
                     },

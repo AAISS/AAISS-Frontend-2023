@@ -221,6 +221,7 @@
     export default {
         name: 'Home',
         data: function () {
+            
             return {
                 registerValue: 'Registration',
                 smallerFontSize: false,
@@ -304,7 +305,7 @@
             getAbout: function () {
                 return new Promise((resolve, reject) => {
                     axios({
-                        url: this.$store.getters.getApi + '/misc/about2021/',
+                        url: this.$store.getters.getApi + '/misc/about/',
                         headers: {
                             'Content-Type': 'application/json',
                         },

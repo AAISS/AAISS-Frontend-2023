@@ -164,7 +164,7 @@
             makePayment: function () {
                 return new Promise((resolve, reject) => {
                     axios({
-                        url: this.$store.getters.getApi + '/payment/',
+                        url: "https://aaiss.ce.aut.ac.ir/api" + '/payment/',
                         headers: {
                             'Content-Type': 'application/json',
                         },
