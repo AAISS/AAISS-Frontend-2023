@@ -221,31 +221,6 @@
     export default {
         name: 'Home',
         data: function () {
-            console.log(this.$route.query);
-
-            console.log(this.$route.query.payment_status);
-            if(this.$route.query.payment_status){
-                console.log(this.$route.query.payment_status);
-                if(this.$route.query.payment_status === "true"){
-                    this.$notify({
-                        group: "payment",
-                        title: "Success",
-                        text: "Paid successfully",
-                        type: "success"
-                    })
-                }
-                else if(this.$route.query.payment_status === "false"){
-                    this.$notify({
-                        group: "payment",
-                        title: "Error",
-                        text: "Something went wrong!",
-                        type: "error"
-                    })
-                }
-            }
-            else{
-                console.log("null");
-            }
             return {
                 registerValue: 'Registration',
                 smallerFontSize: false,
@@ -254,7 +229,9 @@
                 presentations: [],
             }
         },
+        
         computed: {
+            
             presenters: function () {
                 return this.$store.getters.getPresenters;
             },
@@ -353,13 +330,37 @@
             }
         },
         created() {
-
+            
             this.$store.dispatch('getRegisterStatus');
             this.getTableData();
             this.getAbout();
 
         },
         mounted() {
+            if(this.$route.query.payment_status){
+                console.log(this.$route.query.payment_status);
+                if(this.$route.query.payment_status === "true" || this.$route.query.payment_status === true){
+                    console.log("inside true");
+                    this.$notify({
+                        group: "payment",
+                        title: "Success",
+                        text: "Paid successfully",
+                        type: "success"
+                    });
+                }
+                else if(this.$route.query.payment_status === "false" || this.$route.query.payment_status === false){
+                    console.log("inside false");
+                    this.$notify({
+                        group: "payment",
+                        title: "Error",
+                        text: "Something went wrong during payment!",
+                        type: "error"
+                    });
+                }
+            }
+            else{
+                console.log("null");
+            }
             scrollTo(0, 0);
         }
     }

@@ -4,6 +4,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
               rel="stylesheet">
         <notifications group="auth" position="top center" classes="my-vue-notification"></notifications>
+        <notifications group="payment" position="top center" classes="my-vue-notification"></notifications>
         <TopMenu></TopMenu>
         <transition name="fade" mode="out-in">
             <router-view class="iransans "/>
@@ -21,6 +22,7 @@
     export default {
         name: 'App',
         data: function () {
+        
             return {}
         },
         components: {
