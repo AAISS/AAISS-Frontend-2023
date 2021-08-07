@@ -344,7 +344,7 @@
                     this.$notify({
                         group: "payment",
                         title: "Success",
-                        text: "Paid successfully",
+                        text: "Paid successfully! Please check your mail spam.",
                         type: "success"
                     });
                 }
