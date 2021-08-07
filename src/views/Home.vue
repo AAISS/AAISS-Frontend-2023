@@ -222,7 +222,10 @@
         name: 'Home',
         data: function () {
             console.log(this.$route.query);
-            if(this.$route.query.payment_status !== null){
+
+            console.log(this.$route.query.payment_status);
+            if(this.$route.query.payment_status){
+                console.log(this.$route.query.payment_status);
                 if(this.$route.query.payment_status === "true"){
                     this.$notify({
                         group: "payment",
