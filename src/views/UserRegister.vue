@@ -167,7 +167,9 @@
                 }
             },
             registerUser: function () {
+                console.log(this.user);
                 return new Promise((resolve, reject) => {
+                    
                     axios({
                         url: "https://aaiss.ce.aut.ac.ir/api" + '/user/',
                         headers: {

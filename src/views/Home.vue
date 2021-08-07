@@ -223,7 +223,7 @@
         data: function () {
             console.log(this.$route.query);
             if(this.$route.query.payment_status !== null){
-                if(this.$route.query.payment_status === true){
+                if(this.$route.query.payment_status === "true"){
                     this.$notify({
                         group: "payment",
                         title: "Success",
@@ -231,7 +231,7 @@
                         type: "success"
                     })
                 }
-                else{
+                else if(this.$route.query.payment_status === "false"){
                     this.$notify({
                         group: "payment",
                         title: "Error",

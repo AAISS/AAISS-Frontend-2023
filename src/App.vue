@@ -21,28 +21,6 @@
     export default {
         name: 'App',
         data: function () {
-            console.log(this.$route.query);
-            if(this.$route.query.payment_status !== null){
-                if(this.$route.query.payment_status === true){
-                    this.$notify({
-                        group: "payment",
-                        title: "Success",
-                        text: "Paid successfully",
-                        type: "success"
-                    })
-                }
-                else{
-                    this.$notify({
-                        group: "payment",
-                        title: "Error",
-                        text: "Something went wrong!",
-                        type: "error"
-                    })
-                }
-            }
-            else{
-                console.log("null");
-            }
             return {}
         },
         components: {
