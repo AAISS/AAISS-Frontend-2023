@@ -48,7 +48,7 @@
                             <div id="left" class="sub-description">
                                 <h4 class="text-center">{{presentation.name}}</h4>
                                 <p class="text-justify description">{{presentation.desc}}</p>
-                                <div class="date-time-wrapper">
+                                <div class="date-time-wrapper" v-if="scheduled === 'true'">
                                     <div class="minor-date-time">
                                         <h5>Date</h5>
                                         <span class="material-icons">
@@ -183,7 +183,11 @@
             },
             email: function () {
                 return this.$store.getters.getEmail
+            },
+            scheduled: function () {
+                return this.$store.getters.getScheduledStatus
             }
+            
         },
         mounted() {
             setTimeout(
@@ -192,7 +196,7 @@
             );
         },
         async created() {
-
+            this.$store.dispatch('getScheduledStatus');
             try {
                 await this.$store.dispatch('getPresentations');
             } catch (e) {
@@ -224,18 +228,18 @@
 
 
     h1 {
-        color: e4e3e3;
+        color: white;
         padding: 20px;
     }
 
     h4 {
-        color: #B7867E;
+        color: #128d94;
         padding: 20px;
         font-weight: bolder;
     }
 
     h5, .material-icons {
-        color: #B7867E;
+        color: #128d94;
         padding: 20px 1px 20px 1px;
         font-weight: bolder;
     }

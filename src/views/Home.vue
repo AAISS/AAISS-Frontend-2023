@@ -14,7 +14,7 @@
                         </h4>
                     </div>
                 </div>
-                <img src="../assets/img/logo2021.png" class="img-fluid brainImage noSelect"/>
+                <img src="../assets/img/aaiss.svg" class="img-fluid brainImage noSelect"/>
                 <Robot />
                 <img src="../assets/img/aaiss.png" class="aaissHeader" />
             </div>
@@ -131,8 +131,10 @@
                                     </td>
                                 </tr>
                                 <tr v-for="talk in sortTable" :key="talk.name"  v-if="talk.type === 'Workshop'">
-                                    <td>{{talk.date.toDateString()}}</td>
-                                    <td>{{talk.date.toUTCString().split(' ')[4].split(':')[0] +":"+talk.date.toUTCString().split(' ')[4].split(':')[1]}}</td>
+                                    <td v-if="scheduled === 'true'">{{talk.date.toDateString()}}</td>
+                                    <td v-else>Coming Soon...</td>
+                                    <td v-if="scheduled === 'true'">{{talk.date.toUTCString().split(' ')[4].split(':')[0] +":"+talk.date.toUTCString().split(' ')[4].split(':')[1]}}</td>
+                                    <td v-else>-</td>
                                     <td >{{talk.name}}</td>
                                     <td>{{talk.lecturer}}
                                     </td>
@@ -144,8 +146,10 @@
                                     </td>
                                 </tr>
                                 <tr v-for="talk in sortTable" :key="talk.name" v-if="talk.type === 'Presentation'">
-                                    <td>{{talk.date.toDateString()}}</td>
-                                    <td>{{talk.date.toUTCString().split(' ')[4].split(':')[0] +":"+talk.date.toUTCString().split(' ')[4].split(':')[1]}}</td>
+                                    <td v-if="scheduled === 'true'">{{talk.date.toDateString()}}</td>
+                                    <td v-else>Coming Soon...</td>
+                                    <td v-if="scheduled === 'true'">{{talk.date.toUTCString().split(' ')[4].split(':')[0] +":"+talk.date.toUTCString().split(' ')[4].split(':')[1]}}</td>
+                                    <td v-else>-</td>
                                     <td>{{talk.name}}</td>
                                     <td>{{talk.lecturer}}
                                     </td>
@@ -244,6 +248,9 @@
                 }
                 return "/register/user"
             },
+            scheduled: function () {
+                return this.$store.getters.getScheduledStatus
+            },
             sortTable: function () {
                 let talks = [];
                 let presenters = this.$store.getters.getPresenters;
@@ -332,6 +339,7 @@
         created() {
             
             this.$store.dispatch('getRegisterStatus');
+            this.$store.dispatch('getScheduledStatus');
             this.getTableData();
             this.getAbout();
 
@@ -412,10 +420,10 @@
     }
 
     .brainImage {
-        width: 90%;
+        width: 70%;
         position: absolute;
-        left: 46%;
-        top: 50%;
+        left: 47%;
+        top: 51%;
         transform: translate(-50%, -50%);
 
     }
@@ -566,7 +574,7 @@
 
     .ps-link {
         text-decoration: none;
-        color: #B7867E;
+        color: #128d94;
     }
 
     .ps-link:hover {
@@ -647,9 +655,9 @@
             font-size: 17px;
         }
         .brainImage{
-            width: 108%;
+            width: 75%;
             position: absolute;
-            left: 46%;
+            left: 49%;
             top: 60%;
         }
         .aaissHeader{

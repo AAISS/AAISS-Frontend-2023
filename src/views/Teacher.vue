@@ -17,7 +17,8 @@
                        class="btn btn-primary btn-lg btn-block float-left regBtn" target="_blank">{{registerValue}}</a>
                 </div>
                 <div class="col-lg-9 infoBlock">
-                    <h1 class="display-5">
+                    <div :key="workshops.indexOf(workshop)" v-for="workshop in workshops"> 
+                        <h1 class="display-5">
                         {{workshop.name}}
                     </h1>
 
@@ -30,19 +31,19 @@
 
                     <strong v-if="workshop.start_date !== ''">Details</strong>
                     <p v-if="workshop.start_date !== ''">
-                        <date>
+                        <date v-if="scheduled === 'true'">
                             <span class="font-weight-bold">Date: </span> {{datePicker(workshop.start_date)}}
                         </date>
-                        <br>
-                        <time>
+                        <br v-if="scheduled === 'true'">
+                        <time v-if="scheduled === 'true'">
                             <span class="font-weight-bold">Time: </span>{{timePicker(workshop.start_date)}}
                         </time>
+                        <!-- <br> -->
+                        <!-- <duration> -->
+                            <!-- <span class="font-weight-bold">Workshop Duration: </span>{{getDuration}} Minutes -->
+                        <!-- </duration> -->
                         <br>
-                        <duration>
-                            <span class="font-weight-bold">Workshop Duration: </span>{{getDuration}} Minutes
-                        </duration>
-                        <br>
-                        <level>
+                        <level v-if="scheduled === 'true' || scheduled === 'false'" >
 
                             <span class="font-weight-bold">Workshop Level: </span>{{workshop.level}}
                         </level>
@@ -62,6 +63,7 @@
                     <strong>Syllabus</strong>
                     <div v-html="workshop.desc" class="text-justify html-b" style="line-height:30px;"></div>
 
+                    </div>
                     <strong>Bio</strong>
                     <p class="text-justify" style="line-height:30px">
                         {{teacher.bio}}
@@ -96,8 +98,9 @@
             teacher: function () {
                 return this.$store.getters.getCurrentTeacher;
             },
-            workshop: function () {
-                return this.$store.getters.getCurrentWorkshop
+            workshops: function () {
+                console.log(this.$store.getters.getCurrentWorkshops);
+                return this.$store.getters.getCurrentWorkshops
             },
             getDuration: function () {
                 let endHour = this.timePicker(this.workshop.end_date).split(':')[0];
@@ -116,6 +119,9 @@
                     return "/"
                 }
                 return "/register/user"
+            },
+            scheduled: function () {
+                return this.$store.getters.getScheduledStatus
             }
         },
         components: {
@@ -142,8 +148,12 @@
         async created() {
             try {
                 await this.$store.dispatch('getTeacherById', this.$route.params.id);
-                await this.$store.dispatch('getWorkshopById', this.teacher.workshops[0]);
+                this.teacher.workshops.forEach(async (element) => {
+                    await this.$store.dispatch('getWorkshopById', element);
+                });
+
                 this.$store.dispatch('getRegisterStatus');
+                this.$store.dispatch('getScheduledStatus');
 
             } catch (e) {
                 console.log(e);

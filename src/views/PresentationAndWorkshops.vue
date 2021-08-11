@@ -188,6 +188,7 @@
             this.$store.dispatch('getWorkshops');
             this.$store.dispatch('getPresentations');
             this.$store.dispatch('getRegisterStatus');
+            this.$store.dispatch('getScheduledStatus');
             this.getPresentationPrice()
         },
 

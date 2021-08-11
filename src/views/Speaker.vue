@@ -28,8 +28,8 @@
                     <!--                        {{speaker.talk_location}}-->
                     <!--                    </address>-->
 
-                    <strong v-if="presentation.start_date !== ''">Date and Time</strong>
-                    <p v-if="presentation.start_date !== ''">
+                    <strong v-if="presentation.start_date !== '' && scheduled === 'true'">Date and Time</strong>
+                    <p v-if="presentation.start_date !== '' && scheduled === 'true'">
                         <date>
                             <span class="font-weight-bold">On: </span> {{datePicker(presentation.start_date)}}
                         </date>
@@ -83,6 +83,9 @@
                     return "/"
                 }
                 return "/register/user"
+            },
+            scheduled: function () {
+                return this.$store.getters.getScheduledStatus
             }
         },
         components: {
@@ -111,6 +114,7 @@
                 await this.$store.dispatch('getPresenterById', this.$route.params.id);
                 this.$store.dispatch('getPresentationById', this.presenter.presentations[0]);
                 this.$store.dispatch('getRegisterStatus');
+                this.$store.dispatch('getScheduledStatus');
 
             } catch (e) {
                 console.log(e);

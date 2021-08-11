@@ -58,12 +58,12 @@
                                 <span class="detail-titles">Duration: </span>{{getDuration}} Minutes
                             </div>
 
-                            <div>
+                            <div v-if="workshop.prerequisites !== ''">
                                 <span class="detail-titles">Prerequisites: </span>{{workshop.prerequisites }}
                             </div>
 
                             <h6  class="detail-titles" v-if="workshop.has_project === true">Participants will develop a project in this workshop.</h6>
-                            <div class="date-time-wrapper">
+                            <div v-if="scheduled === 'true'" class="date-time-wrapper">
                                 <div class="minor-date-time">
                                     <h5>Date</h5>
                                     <span class="material-icons">
@@ -232,6 +232,9 @@
             },
             email: function () {
                 return this.$store.getters.getEmail
+            },
+            scheduled: function () {
+                return this.$store.getters.getScheduledStatus
             }
         },
         mounted() {
@@ -241,6 +244,7 @@
             );
         },
         async created() {
+            this.$store.dispatch('getScheduledStatus');
             await this.getWorkshopById(this.$route.params.id)
         }
     }
@@ -272,13 +276,13 @@
     }
 
     h4 {
-        color: #B7867E;
+        color: #128d94;
         padding: 20px;
         font-weight: bolder;
     }
 
     h5, .material-icons, .detail-titles {
-        color: #B7867E;
+        color: #128d94;
         padding: 20px 1px 20px 1px;
         font-weight: bolder;
     }

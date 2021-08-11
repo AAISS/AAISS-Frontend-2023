@@ -31,7 +31,7 @@
 
 <style scoped>
     footer {
-        background-color: #B7867E;
+        background-color: #128d94;
     }
 
     .footerText span {

@@ -196,6 +196,7 @@
         },
         async mounted() {
             await this.$store.dispatch('getRegisterStatus');
+            this.$store.dispatch('getScheduledStatus');
             // if (this.$store.getters.getRegistrationStatus === 'false') {
             //     this.$router.push({
             //         name: 'Home',

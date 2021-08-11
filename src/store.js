@@ -17,6 +17,7 @@ export default new Vuex.Store({
         teachers: [],
         presentations: [],
         workshops: [],
+        currentWorkshops: [],
         staffList: [],
         email: localStorage.getItem('email') || "",
         FOI: [],
@@ -24,7 +25,8 @@ export default new Vuex.Store({
         currentTeacher: {},
         currentWorkshop: {},
         currentPresentation: {},
-        register: 'false'
+        register: 'false',
+        scheduled: 'false'
     },
     mutations: {
         updatePresenters(state, newPresenter) {
@@ -54,8 +56,18 @@ export default new Vuex.Store({
         updateCurrentWorkshop(state, newWorkshop) {
             state.currentWorkshop = newWorkshop
         },
+        updateCurrentWorkshops(state, newWorkshop) {
+            state.currentWorkshops.push(newWorkshop)
+        },
+        clearCurrentWorkshops(state){
+            state.currentWorkshops = [];
+        },
         updateRegisterStatus(state, status) {
             state.register = status.desc
+
+        },
+        updateScheduledStatus(state, status) {
+            state.scheduled = status.desc
 
         },
         updateCurrentPresentation(state, presentation){
@@ -77,6 +89,23 @@ export default new Vuex.Store({
                     method: 'GET',
                 }).then((response) => {
                     commit('updateRegisterStatus', response.data);
+                    resolve(response.data);
+                }).catch((error) => {
+                    reject(error);
+                })
+            })
+
+        },
+        getScheduledStatus: function ({commit}) {
+            return new Promise((resolve, reject) => {
+                axios({
+                    url: this.getters.getApi + '/misc/scheduled/',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    method: 'GET',
+                }).then((response) => {
+                    commit('updateScheduledStatus', response.data);
                     resolve(response.data);
                 }).catch((error) => {
                     reject(error);
@@ -149,7 +178,10 @@ export default new Vuex.Store({
                     method: 'GET',
                 }).then((response) => {
                     commit('updateCurrentTeacher', response.data);
+                    commit('clearCurrentWorkshops');
+                    console.log(this.state.currentWorkshops);
                     resolve(response.data);
+                    console.log(response.data);
                 }).catch((error) => {
                     reject(error);
                 })
@@ -196,6 +228,7 @@ export default new Vuex.Store({
                     },
                     method: 'GET',
                 }).then((response) => {
+                    commit('updateCurrentWorkshops', response.data);
                     commit('updateCurrentWorkshop', response.data);
                     resolve(response.data);
                 }).catch((error) => {
@@ -295,6 +328,10 @@ export default new Vuex.Store({
             state => {
                 return state.register;
             },
+            getScheduledStatus:
+            state => {
+                return state.scheduled;
+            },
         getCurrentPresentation:
             state => {
                 return state.currentPresentation
@@ -302,6 +339,10 @@ export default new Vuex.Store({
         getCurrentWorkshop:
             state => {
                 return state.currentWorkshop
+            },
+            getCurrentWorkshops:
+            state => {
+                return state.currentWorkshops
             },
             getStaffList: state => {
                 return state.staffList;
