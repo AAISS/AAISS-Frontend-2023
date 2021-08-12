@@ -58,22 +58,6 @@
         <!--        </section>-->
 
 
-        <!--        <section id="committeeSection">-->
-        <!--            <div class="container">-->
-        <!--                <div class="row pt-5">-->
-        <!--                    <div class="col-md-12">-->
-        <!--                        <h1 class="text-center font-weight-bold text-white">Scientific Committee</h1>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--                <div class="row pt-3">-->
-        <!--                    <div class="col-lg" :key="scientificCommittee.indexOf(member)"-->
-        <!--                         v-for="member in scientificCommittee">-->
-        <!--                        <CommitteMemberBlock :member="member"></CommitteMemberBlock>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </section>-->
-
 
         <section id="speakersSection" v-if="presenters.length !== 0">
             <div class="container">
@@ -82,7 +66,7 @@
                         <h1 class="text-center font-weight-bold text-color-blue">Invited Speakers</h1>
                     </div>
                 </div>
-                <div class="row pt-3">
+                <div class="row centeralizedRow pt-3">
                     <div class="col-lg-3" :key="speaker.id" v-for="speaker in presenters">
                         <SpeakerBlock :speaker="speaker"></SpeakerBlock>
                     </div>
@@ -98,7 +82,7 @@
                         <h1 class="text-center font-weight-bold  text-color-blue">Workshops</h1>
                     </div>
                 </div>
-                <div class="row pt-3">
+                <div class="row centeralizedRow pt-3">
                     <div class="col-lg-3" :key="speaker.id" v-for="speaker in teachers">
                         <TeacherBlock :speaker="speaker"></TeacherBlock>
                     </div>
@@ -106,6 +90,21 @@
             </div>
         </section>
 
+        <section id="committeeSection">
+                   <div class="container">
+                       <div class="row pt-5">
+                           <div class="col-md-12">
+                               <h1 class="text-center font-weight-bold text-white">Scientific Committee</h1>
+                           </div>
+                       </div>
+                       <div class="row centeralizedRow pt-3">
+                           <div class="col-lg-3" :key="scientificCommittee.indexOf(member)"
+                                v-for="member in scientificCommittee">
+                               <CommitteMemberBlock :member="member"></CommitteMemberBlock>
+                           </div>
+                       </div>
+                   </div>
+               </section>
 
         <section id="scheduleSection">
             <div class="container">
@@ -218,6 +217,7 @@
     // @ is an alias to /src
     import SpeakerBlock from '../components/SpeakerBlock';
     import TeacherBlock from "../components/TeacherBlock";
+    import CommitteMemberBlock from '../components/CommitteeMemberBlock.vue';
     import Robot from "../components/Robot.vue"
     import axios from "axios";
 
@@ -241,6 +241,9 @@
             },
             teachers: function () {
                 return this.$store.getters.getTeachers;
+            },
+            scientificCommittee: function () {
+                return this.$store.getters.getScientificCommittee;
             },
             register: function () {
                 if (this.$store.getters.getRegistrationStatus === 'false') {
@@ -298,7 +301,8 @@
         components: {
             TeacherBlock,
             SpeakerBlock,
-            Robot
+            Robot,
+            CommitteMemberBlock
         },
         methods: {
             showRegisterSoonMessage: function () {
@@ -340,6 +344,7 @@
             
             this.$store.dispatch('getRegisterStatus');
             this.$store.dispatch('getScheduledStatus');
+            this.$store.dispatch('getScientificCommittee');
             this.getTableData();
             this.getAbout();
 
@@ -476,6 +481,10 @@
         background-color: #128D8A;
     }
 
+    #committeeSection{
+        background-color: #128D8A;
+    }
+
     #buttonSection {
         background-color: #128D8A;
         min-height: 30vh;
@@ -585,6 +594,11 @@
     }
 
     .firstSpecRow{
+    }
+    .centeralizedRow{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .aaissHeader{

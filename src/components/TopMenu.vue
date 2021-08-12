@@ -16,15 +16,15 @@
                 <li class="nav-item">
                     <a href="https://aaiss.ce.aut.ac.ir/#aboutSection" class="nav-link">About</a>
                 </li>
-<!--                <li class="nav-item">-->
-<!--                    <a href="https://aaiss.ce.aut.ac.ir/#committeeSection" class="nav-link">Committee</a>-->
-<!--                </li>-->
                 <li class="nav-item">
                     <a href="https://aaiss.ce.aut.ac.ir/#speakersSection" class="nav-link">Speakers</a>
                 </li>
                 <li class="nav-item">
                     <a href="https://aaiss.ce.aut.ac.ir/#teacherSection" class="nav-link">Workshops</a>
                 </li>
+                <li class="nav-item">
+                   <a href="https://aaiss.ce.aut.ac.ir/#committeeSection" class="nav-link">Committee</a>
+               </li>
                 <li class="nav-item">
                     <a href="https://aaiss.ce.aut.ac.ir/#scheduleSection" class="nav-link">Schedule</a>
                 </li>

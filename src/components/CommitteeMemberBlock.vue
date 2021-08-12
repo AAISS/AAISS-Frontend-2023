@@ -1,17 +1,17 @@
 <template>
     <div class="speakerBlock">
         <div class="text-center imgWrapper">
-            <img :src="member.image_path" alt="img" class="rounded-circle img-fluid" draggable="false">
+            <img :src="this.$store.getters.getMediaRoot + member.profile" alt="img" class="rounded-circle img-fluid" draggable="false">
         </div>
         <div class="text-center speakerInfo">
             <h4 class="memberName">
-                {{member.name}}
+                {{member.first_name +" "+member.last_name}}
             </h4>
             <h5 class="memberPosition">
-                {{member.position}}
+                {{member.description.split(',')[0] + " Dept. at AUT"}}
             </h5>
             <h6 class="memberRule">
-                {{member.rule}}
+                {{member.description.split(',')[1]}}
             </h6>
 
         </div>

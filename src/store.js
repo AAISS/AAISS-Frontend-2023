@@ -18,6 +18,7 @@ export default new Vuex.Store({
         presentations: [],
         workshops: [],
         currentWorkshops: [],
+        scientificCommittee: [],
         staffList: [],
         email: localStorage.getItem('email') || "",
         FOI: [],
@@ -37,6 +38,9 @@ export default new Vuex.Store({
         },
         updateTeachers(state, newTeacher) {
             state.teachers = newTeacher;
+        },
+        updateScientificCommittee(state, newCommittee) {
+            state.scientificCommittee = newCommittee;
         },
         updateCurrentTeacher(state, newTeacher) {
             state.currentTeacher = newTeacher;
@@ -95,6 +99,23 @@ export default new Vuex.Store({
                 })
             })
 
+        },
+        getScientificCommittee: function ({commit}) {
+            return new Promise((resolve, reject) => {
+                axios({
+                    url: this.getters.getApi + '/committee/',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    method: 'GET',
+                }).then((response) => {
+                    commit('updateScientificCommittee', response.data);
+                    resolve(response.data);
+                    console.log(response.data);
+                }).catch((error) => {
+                    reject(error);
+                })
+            })
         },
         getScheduledStatus: function ({commit}) {
             return new Promise((resolve, reject) => {
@@ -350,6 +371,9 @@ export default new Vuex.Store({
         getEmail:
             state => {
                 return state.email
+            },
+            getScientificCommittee: state => {
+                return state.scientificCommittee;
             }
 
     }
