@@ -7,7 +7,12 @@
             <router-link :to="'/teachers/' + speaker.id">
                 <h5>{{speaker.name}}</h5>
             </router-link>
-            <h6 v-if="this.$route.name !== 'teacher'">{{Object.values(speaker.workshops)[0]}}</h6>
+            <div v-if="this.$route.name !== 'teacher'">
+                <div v-for="value in speaker.workshops" :key="value">
+                    <h6 >{{value}}</h6>
+                    <hr v-if="Object.values(speaker.workshops)[Object.values(speaker.workshops).length - 1] !== value">
+                </div>
+            </div>
         </div>
     </router-link>
 </template>
@@ -86,6 +91,12 @@
         .speakerBlock {
             height: auto;
         }
+    }
+
+    hr {
+        margin-top: 0;
+        margin-bottom: 0;
+        background-color: #1b7979;
     }
 
 </style>
