@@ -38,10 +38,10 @@
                         <time v-if="scheduled === 'true'">
                             <span class="font-weight-bold">Time: </span>{{timePicker(workshop.start_date)}}
                         </time>
-                        <!-- <br> -->
-                        <!-- <duration> -->
-                            <!-- <span class="font-weight-bold">Workshop Duration: </span>{{getDuration}} Minutes -->
-                        <!-- </duration> -->
+                        <br>
+                        <duration>
+                            <span class="font-weight-bold">Workshop Duration: </span>{{getDuration(workshop)}} Minutes
+                        </duration>
                         <br>
                         <level v-if="scheduled === 'true' || scheduled === 'false'" >
 
@@ -102,18 +102,7 @@
                 console.log(this.$store.getters.getCurrentWorkshops);
                 return this.$store.getters.getCurrentWorkshops
             },
-            getDuration: function () {
-                let endHour = this.timePicker(this.workshop.end_date).split(':')[0];
-                let endMinute = this.timePicker(this.workshop.end_date).split(':')[1];
-                let endSecond = this.timePicker(this.workshop.end_date).split(':')[2];
-                let end = new Date(0, 0, 0, endHour, endMinute, endSecond);
-                let startHour = this.timePicker(this.workshop.start_date).split(':')[0];
-                let startMinute = this.timePicker(this.workshop.start_date).split(':')[1];
-                let startSecond = this.timePicker(this.workshop.start_date).split(':')[2];
-                let start = new Date(0, 0, 0, startHour, startMinute, startSecond);
-
-                return Number(((end.getTime() - start.getTime()) / 60000).toFixed(2));
-            },
+            
             register: function () {
                 if(this.$store.getters.getRegistrationStatus === 'false'){
                     return "/"
@@ -136,14 +125,29 @@
                     this.smallerFontSize = false;
                 }, 2500)
             },
+            getDuration: function (workshop) {
+                console.log(this.timePicker(workshop.end_date));
+                let endHour = this.timePicker(workshop.end_date).split(':')[0];
+                let endMinute = this.timePicker(workshop.end_date).split(':')[1];
+                let endSecond = this.timePicker(workshop.end_date).split(':')[2];
+                let end = new Date(0, 0, 0, endHour, endMinute, endSecond);
+                let startHour = this.timePicker(workshop.start_date).split(':')[0];
+                let startMinute = this.timePicker(workshop.start_date).split(':')[1];
+                let startSecond = this.timePicker(workshop.start_date).split(':')[2];
+                let start = new Date(0, 0, 0, startHour, startMinute, startSecond);
+
+                return Number(((end.getTime() - start.getTime()) / 60000).toFixed(2));
+            },
             datePicker: function (date) {
                 return date.split('T')[0];
             },
             timePicker: function (date) {
                 var d = date.split('T')[1];
                 d = d.split('Z')[0];
-                return d.split('.')[0]
-            },
+                d = d.split('.')[0];
+                console.log(d);
+                return d;
+            }
         },
         async created() {
             try {
