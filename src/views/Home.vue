@@ -132,7 +132,8 @@
                                 <tr v-for="talk in sortTable" :key="talk.name"  v-if="talk.type === 'Workshop'">
                                     <td v-if="scheduled === 'true'">{{talk.date.toDateString()}}</td>
                                     <td v-else>Coming Soon...</td>
-                                    <td v-if="scheduled === 'true'">{{talk.date.toUTCString().split(' ')[4].split(':')[0] +":"+talk.date.toUTCString().split(' ')[4].split(':')[1]}}</td>
+                                    <td v-if="scheduled === 'true'">{{talk.date.toUTCString().split(' ')[4].split(':')[0] +":"+talk.date.toUTCString().split(' ')[4].split(':')[1]
+                                        +"_"+ talk.end.toUTCString().split(' ')[4].split(':')[0] +":"+talk.end.toUTCString().split(' ')[4].split(':')[1]}}</td>
                                     <td v-else>-</td>
                                     <td >{{talk.name}}</td>
                                     <td>{{talk.lecturer}}
@@ -147,7 +148,8 @@
                                 <tr v-for="talk in sortTable" :key="talk.name" v-if="talk.type === 'Presentation'">
                                     <td v-if="scheduled === 'true'">{{talk.date.toDateString()}}</td>
                                     <td v-else>Coming Soon...</td>
-                                    <td v-if="scheduled === 'true'">{{talk.date.toUTCString().split(' ')[4].split(':')[0] +":"+talk.date.toUTCString().split(' ')[4].split(':')[1]}}</td>
+                                    <td v-if="scheduled === 'true'">{{talk.date.toUTCString().split(' ')[4].split(':')[0] +":"+talk.date.toUTCString().split(' ')[4].split(':')[1]
+                                        +"_"+ talk.end.toUTCString().split(' ')[4].split(':')[0] +":"+talk.end.toUTCString().split(' ')[4].split(':')[1]}}</td>
                                     <td v-else>-</td>
                                     <td>{{talk.name}}</td>
                                     <td>{{talk.lecturer}}
@@ -263,6 +265,7 @@
                         let eachTalk = new Object();
                         eachTalk.name = presentation.name;
                         eachTalk.date = new Date(Date.parse(presentation.start_date));
+                        eachTalk.end = new Date(Date.parse(presentation.end_date));
                         for (let i = 0; i < presenters.length; i++) {
                             if (presenters[i].id === presentation.presenters[0])
                                 eachTalk.lecturer = presenters[i].name;
@@ -277,6 +280,7 @@
                     let eachTalk = new Object();
                     eachTalk.name = workshop.name;
                     eachTalk.date = new Date(Date.parse(workshop.start_date));
+                    eachTalk.end = new Date(Date.parse(workshop.end_date));
                     eachTalk.lecturer = ""
                     for (let i = 0; i <workshop.teachers.length ; i++) {
                         let str = "";
