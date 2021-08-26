@@ -199,7 +199,12 @@
                         <h6 class="organizerAddress mt-5">Website : <a href="http://ceit-ssc.ir" target="_blank">ceit-ssc.ir</a>
                         </h6>
                         <h6 class="organizerEmail">
-                            Email: <a href="mailto:ceit.aaiss@gmail.com">ceit.aaiss@gmail.com</a></h6>
+                            Email: <a href="mailto:ceit.aaiss@gmail.com">ceit.aaiss@gmail.com</a>
+                            
+                            </h6>
+                        <h6 class="organizerEmail">
+                            Telegram: <a href="http://telegram.me/aaiss_aut">@aaiss_aut</a>
+                            </h6>
                         <div class="row pt-3">
                             <div class="col-md-12">
                                 <img src="../assets/img/ssc-logo-white-horizontal.png" alt="ssc logo" class="img-fluid"
