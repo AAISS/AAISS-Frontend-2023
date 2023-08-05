@@ -5,7 +5,7 @@ import store from './store'
 import Notifications from 'vue-notification'
 import 'bootstrap'; 
 import 'bootstrap/dist/css/bootstrap.min.css'
-var VueScrollTo = require('vue-scrollto');
+import VueScrollTo from 'vue-scrollto'
 import moment from 'moment'
 import VueParticlesBg from "particles-bg-vue";
 

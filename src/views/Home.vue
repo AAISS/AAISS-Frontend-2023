@@ -192,7 +192,7 @@
                     </div>
                 </div>
                 <div class="row pt-5 pb-5 details">
-                    <div class="col-lg-6 text-white">
+                    <div class="col-md-6 text-white text-center text-md-start">
 
                         <h5 class="organizerName">Students' Scientific Chapter of Computer Engineering
                             Department of Amirkabir University of Technology</h5>
@@ -205,13 +205,15 @@
                         <h6 class="organizerEmail">
                             Telegram: <a href="http://telegram.me/aaiss_aut">@aaiss_aut</a>
                             </h6>
-                        <div class="row pt-3">
+
+                    </div>
+
+                    <div class="col-md-6 " align="center">
                             <div class="col-md-12">
-                                <img src="../assets/img/ssc-logo-white-horizontal.png" alt="ssc logo" class="img-fluid"
-                                     draggable="false">
+                                <img src="../assets/img/ssc-logo-white-horizontal.png" alt="ssc logo" class="img-fluid px-5"
+                                     draggable="false" >
                             </div>
                         </div>
-                    </div>
 
                 </div>
             </div>
