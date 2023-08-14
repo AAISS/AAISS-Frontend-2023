@@ -1,6 +1,6 @@
 <template>
     <div class="h-100">
-        <particles-bg type="lines" :bg="true" class="particles" num="100"/>
+        <particles-bg type="lines" :bg="true"  class="particles" num="100"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
               rel="stylesheet">
         <notifications group="auth" position="top center" classes="my-vue-notification"></notifications>
@@ -22,7 +22,7 @@
     export default {
         name: 'App',
         data: function () {
-        
+
             return {}
         },
         components: {
@@ -71,8 +71,8 @@
     }
 
     .particles {
-        z-index: 0 !important;  
-        position: fixed !important;   
+        z-index: 0 !important;
+        //position: fixed !important;
     }
     .notification-title {
         font-family : system-ui !important;
@@ -109,6 +109,6 @@
         }
 
     }
-    
+
 
 </style>

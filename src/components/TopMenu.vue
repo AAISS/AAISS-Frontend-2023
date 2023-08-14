@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-md navbar-light fixed-top"
          :class="{'bg-white' : navbarWhiteColorReady,'navbar-shadow': navbarShadowReady}">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aaissNavbar"
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aaissNavbar"
                 aria-controls="aaissNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

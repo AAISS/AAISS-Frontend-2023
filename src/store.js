@@ -95,6 +95,7 @@ export default new Vuex.Store({
                     commit('updateRegisterStatus', response.data);
                     resolve(response.data);
                 }).catch((error) => {
+                    console.log(error)
                     reject(error);
                 })
             })
