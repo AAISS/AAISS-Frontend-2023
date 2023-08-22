@@ -171,7 +171,7 @@
                 return new Promise((resolve, reject) => {
                     
                     axios({
-                        url: "https://aaiss.ce.aut.ac.ir/api" + '/user/',
+                        url: "https://aaiss.ir/api" + '/user/',
                         headers: {
                             'Content-Type': 'application/json',
                         },

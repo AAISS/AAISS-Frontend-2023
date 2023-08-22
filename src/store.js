@@ -6,8 +6,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        api: 'https://aaiss.ce.aut.ac.ir/api/2021',
-        mediaRoot:'https://aaiss.ce.aut.ac.ir',
+        api: 'https://aaiss.ir/api/2021',
+        mediaRoot:'https://aaiss.ir',
         // api: 'http://localhost:8000/api',
         // media: 'http://localhost:8000',
 
@@ -212,7 +212,7 @@ export default new Vuex.Store({
         getFieldsOfInterest: function ({commit}, id) {
             return new Promise((resolve, reject) => {
                 axios({
-                    url: "https://aaiss.ce.aut.ac.ir/api" + '/foi/',
+                    url: "https://aaiss.ir/api" + '/foi/',
                     headers: {
                         'Content-Type': 'application/json',
                     },
