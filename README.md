@@ -1,3 +1,5 @@
+# This project has been archived and moved to [here](https://github.com/AAISS/AAISS-2023/frontend)
+
 # aaiss
 
 ## Project setup
